@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login for the service <%= service %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Margarita login for <%= service %></h1>
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+      <div class="well">
+        <form class="form-horizontal" name="loginform" id="loginform" action="login" method="POST">
+          <input type="hidden" id="requestkey" name="requestkey" value="<%= requestkey %>">
+          <div class="form-group <%= badLogin && 'has-error' %>">
+            <label for="username" class="col-sm-3 control-label">Username</label>
+            <div class="col-sm-9">
+              <input type="text" name="username" id="username" value="<%= username %>" class="form-control" autocomplete="on" tabindex="1">
+              <% if (badLogin) { %>
+                <span class="help-block">
+                  Wrong username/password. password is the same as username. See all available profiles on the <a href="./">homepage</a>.
+                </span>
+              <% } %>
+            </div>
+          </div>
+          <div class="form-group <%= badLogin && 'has-error' %>">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+              <input type="password" name="password" id="password" size="30" class="form-control" autocomplete="on" tabindex="2">
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3 ">
+              <p>This is not a real authentication service. <b>Do not enter real credentials</b>! <br>
+              <a href="./">read more</a></p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button id="loginbutton" type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
