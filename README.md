@@ -1,5 +1,6 @@
 Margarita
 =========
+[![Build Status](https://travis-ci.org/CourseAdvisor/margarita.svg?branch=master)](https://travis-ci.org/CourseAdvisor/margarita)
 
 A lightweight tequila development and testing service.
 
