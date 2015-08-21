@@ -17,7 +17,7 @@ var app = {
       }
     }
 
-    if (params['urlaccess'] == undefined) {
+    if (params.urlaccess == null) {
       throw new Error('No urlaccess specified');
     }
 

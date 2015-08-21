@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var app = require('../app/index');
-var storage = require('../app/storage');
-var profiles = require('../app/profiles');
+var app = require('./index');
+var storage = require('./storage');
+var profiles = require('./profiles');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
