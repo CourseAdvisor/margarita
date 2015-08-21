@@ -1,0 +1,11 @@
+body {
+  padding-top: 30px;
+}
+
+.debug-view {
+  min-height: 200px;
+}
+
+#logo {
+  margin-top: 22px;
+}

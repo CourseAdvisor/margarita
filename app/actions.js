@@ -2,10 +2,11 @@ var utils = require('./utils');
 var storage = require('./storage');
 var profiles = require('./profiles');
 var package = require('../package.json');
+var ActionError = require('./ActionError');
 
 var allowedAttributes = ['uniqueid','name','firstname','unit','unitid','where','group','email'];
 
-var app = {
+var actions = {
 
   // Creates an authentication token for one client and returns it
   createRequest: function(params) {
@@ -13,12 +14,12 @@ var app = {
     for (var i in params.request) {
       var attr = params.request[i];
       if (allowedAttributes.indexOf(attr) < 0) {
-        throw new Error('Invalid request attribute: '+attr);
+        throw ActionError('Invalid request attribute: '+attr, 400);
       }
     }
 
     if (params.urlaccess == null) {
-      throw new Error('No urlaccess specified');
+      throw ActionError('No urlaccess specified', 400);
     }
 
     var key = utils.makeToken();
@@ -30,7 +31,7 @@ var app = {
   requestAuth: function(key) {
     var data = storage.get(key);
     if (data == null) {
-      throw new Error('Invalid key: '+key);
+      throw ActionError('Invalid key: '+key, 400);
     }
 
     return {
@@ -47,7 +48,7 @@ var app = {
     var token = form.requestkey;
     var data = storage.get(token);
     if (data == null) {
-      throw new Error('Invalid key: '+token);
+      throw ActionError('Invalid key: '+token, 400);
     }
 
     var password = form.password;
@@ -73,7 +74,7 @@ var app = {
     var data = storage.get('auth_'+key);
 
     if (!data) {
-      throw new Error('Unable to read session: '+key);
+      throw ActionError('Unable to read session: '+key, 400);
     }
 
     var output = {
@@ -103,4 +104,4 @@ var app = {
   }
 };
 
-module.exports = app;
+module.exports = actions;

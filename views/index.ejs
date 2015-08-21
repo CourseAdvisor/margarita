@@ -6,22 +6,25 @@
     <link rel='stylesheet' href='/stylesheets/style.css'>
   </head>
   <body>
-    <img src="images/logo.png" alt="margarita logo" class="pull-left">
-    <h1>Welcome to margarita!</h1>
-    <p>A versatile tequila spoofer.</p>
-    <p>TODO: user manual. could add a view to show loaded profiles and storage state.
-      The 400 error page should link here <br>
-      Troubleshooting for 400 error page: <br>
-      - send POST data as text/plain mime type.</p>
+    <div class="container">
+      <img src="images/logo.png" alt="margarita logo" class="pull-left" id="logo">
+      <h1>Welcome to margarita!</h1>
+      <p>A versatile tequila spoofer.</p>
 
-    <h2>Storage:</h2>
-    <pre><%= JSON.stringify(storage) %></pre>
 
-    <h2>Profiles:</h2>
-    <% if (profiles != null && Object.keys(profiles).length !== 0) { %>
-      <pre><%= JSON.stringify(profiles) %></pre>
-    <% } else { %>
-      <p>There are no profiles currently loaded. Put your profiles in /profiles.json or rename /profiles_example.json to /profiles.json to quickly get started.</p>
-    <% } %>
+      <h2 id="status">Service status</h2>
+
+      <h3>profiles.json</h3>
+      <% if (profiles != null && Object.keys(profiles).length !== 0) { %>
+        <textarea readonly class="form-control debug-view"><%= JSON.stringify(profiles, null, 4) %></textarea>
+      <% } else { %>
+        <p>There are no profiles currently loaded. Put your profiles in /profiles.json or rename /profiles_example.json to /profiles.json to quickly get started.</p>
+      <% } %>
+
+      <h3>Storage</h3>
+      <textarea readonly class="form-control debug-view"><%= JSON.stringify(storage, null, 4) %></textarea>
+
+      <%- docHTML %>
+    </div>
   </body>
 </html>
