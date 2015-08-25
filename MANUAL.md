@@ -43,6 +43,7 @@ find a mistake.
 
 This is a typical 3-way authentication procedure between the **application**,
 the **user** and **tequila**.
+
 1. The **application** asks **tequila** to create a new request. Tequila answers
 with a unique token. All request attributes are defined at this step.
 2. The **application** sends the **user** to a login page on **tequila** using
