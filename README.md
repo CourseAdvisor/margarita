@@ -37,5 +37,5 @@ Detailed instructions on how to develop with tequila/margarita can be found in t
 
 ## Contributing
 
-Right now, this app fits the basic requirements to mock tequila for [CourseAdvisor](/CourseAdvisor/courseadvisor) and
+Right now, this app fits the basic requirements to mock tequila for [CourseAdvisor](https://github.com/CourseAdvisor/courseadvisor) and
 some features and definitions might be missing. Feel free to file an issue or send pull requests :) Be sure to check your code with `npm test` though (requires `npm install -g jshint`).
