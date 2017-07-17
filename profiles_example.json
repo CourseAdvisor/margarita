@@ -7,6 +7,8 @@
     "name": "Snow",
     "firstname": "John",
     "where": "IN-BA6/IN-S/ETU/EPFL/CH",
-    "unit":"IN-BA6,Section d'informatique - Bachelor semestre 6"
+    "unit":"IN-BA6,Section d'informatique - Bachelor semestre 6",
+    "statut": "todo",
+    "displayname": "Jon Snow"
   }
 }

@@ -4,7 +4,7 @@ var profiles = require('./profiles');
 var package = require('../package.json');
 var ActionError = require('./ActionError');
 
-var allowedAttributes = ['uniqueid','name','firstname','unit','unitid','where','group','email'];
+var allowedAttributes = ['uniqueid','name','firstname','unit','unitid','where','group','email','statut', 'displayname'];
 
 var actions = {
 
